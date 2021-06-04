@@ -31,3 +31,14 @@ plt.title('Marks vs Hours Of Study (Testing set)')
 plt.xlabel('Hours of Study')
 plt.ylabel('Marks')
 plt.show()
+
+#comparing values
+comparison = pd.DataFrame({'Actual':y_test, 'Predicted':y_pred})
+print("\nComparison between Actual and Predicted values:{}".format(comparison))
+
+#predicting score for a Case Study where a Child studies for 9.25 Hours
+comparison = np.array(9.25)
+comparison = comparison.reshape(-1, 1)
+pred = regressor.predict(comparison)
+print("\nIf the student studies for 9.25 hours/day, the marks obtained is {}.".format(pred))
+
